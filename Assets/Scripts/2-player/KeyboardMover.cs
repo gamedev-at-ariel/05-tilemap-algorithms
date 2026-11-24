@@ -10,8 +10,7 @@ public class KeyboardMover : MonoBehaviour {
     [SerializeField] protected InputAction moveAction;
 
     void OnValidate() {
-        // Provide default bindings for the input actions.
-        // Based on answer by DMGregory: https://gamedev.stackexchange.com/a/205345/18261
+        // Provide default bindings for the input actions. Based on answer by DMGregory: https://gamedev.stackexchange.com/a/205345/18261
         if (moveAction == null)
             moveAction = new InputAction(type: InputActionType.Button);
         if (moveAction.bindings.Count == 0)

@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 790962200}
   - component: {fileID: 790962206}
   - component: {fileID: 790962202}
+  - component: {fileID: 790962207}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -327,6 +328,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &790962200
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -372,6 +374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 445804560636057897, guid: 0958ae8472e8df2449fefebb187038bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -381,7 +384,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &790962201
 Transform:
@@ -433,6 +435,7 @@ MonoBehaviour:
       m_Action: Move To
       m_Flags: 0
     m_Flags: 0
+    m_Priority: 0
   moveToLocation:
     m_Name: Move To Location
     m_Type: 0
@@ -450,6 +453,7 @@ MonoBehaviour:
       m_Action: Move To Location
       m_Flags: 0
     m_Flags: 0
+    m_Priority: 0
 --- !u!114 &790962206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,8 +515,23 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     m_Flags: 0
+    m_Priority: 0
   tilemap: {fileID: 931517250}
   allowedTiles: {fileID: 73550133}
+--- !u!114 &790962207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790962199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fdc1cdbc1657af49bcd084e02393dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnapToGrid
+  tilemap: {fileID: 931517250}
+  snap: 1
 --- !u!1 &931517247
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +567,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &931517249
 TilemapRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -593,6 +613,7 @@ TilemapRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -600,7 +621,6 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
 --- !u!1839735485 &931517250
 Tilemap:
   m_ObjectHideFlags: 0
@@ -2554,7 +2574,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 9
+  serializedVersion: 10
   m_EnableBakedLightmaps: 0
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
@@ -2569,6 +2589,12 @@ LightingSettings:
   m_BakeResolution: 40
   m_Padding: 2
   m_LightmapCompression: 3
+  m_LightmapPackingMode: 1
+  m_LightmapPackingMethod: 0
+  m_XAtlasPackingAttempts: 16384
+  m_XAtlasBruteForce: 0
+  m_XAtlasBlockAlign: 0
+  m_XAtlasRepackUnderutilizedLightmaps: 1
   m_AO: 0
   m_AOMaxDistance: 1
   m_CompAOExponent: 1
