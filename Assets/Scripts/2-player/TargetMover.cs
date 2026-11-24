@@ -28,6 +28,12 @@ public class TargetMover: MonoBehaviour {
 
     protected bool atTarget = true;  // This property is set to "true" whenever the object has already found the target.
 
+
+    SnapToGrid snapToGrid;
+    private void Awake() {
+        snapToGrid = GetComponent<SnapToGrid>();
+    }
+
     public void SetTarget(Vector3 newTargetInWorld) {
         if (targetInWorld != newTargetInWorld) {
             targetInWorld = newTargetInWorld;
@@ -82,7 +88,7 @@ public class TargetMover: MonoBehaviour {
             currentPathInGrid.RemoveAt(0);  // this was the current node
             Vector3Int nextNode = currentPathInGrid[0];  // this is the new node
             //transform.position = tilemap.GetCellCenterWorld(nextNode);
-            GetComponent<SnapToGrid>().LogicalPosition = tilemap.GetCellCenterWorld(nextNode);
+            snapToGrid.LogicalPosition = tilemap.GetCellCenterWorld(nextNode);
         }
     }
 }
